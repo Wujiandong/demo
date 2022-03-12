@@ -25,6 +25,8 @@ int main()
 				//该部分执行链表的创建 
 				case 'A' :	{
 								NodeNum = 2020; //创建2020个日期结点
+					
+					
 								BuildList(NodeNum);     //建立链表 
 								printf("\n共创建%d个日期结点。" 
 								       "(1900<=年<=2020,1<=月<=12,1<=日<=31)。\n\n", NodeNum);
