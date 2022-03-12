@@ -2,103 +2,102 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h> 
-#include "221900128_Îâ½¨¶«_list.h"
+#include "221900128_å´å»ºä¸œ_list.h"
 
 int main()
 {
-	int NodeNum, n;    //ÉùÃ÷×Ü½áµãÊıºÍÖ¸¶¨½áµãÊı 
-	char input;        //ÉùÃ÷ÓÃ»§Ñ¡Ôñ±äÁ¿ 
-	Copyright();       //ÏÔÊ¾°æÈ¨
-	SystemTime();      //ÏÔÊ¾ÏµÍ³Ê±¼ä
-	Menu();            //ÏÔÊ¾²Ëµ¥½çÃæ 
-	printf("\nÇëÑ¡Ôñ(A,B,C,D,E,F,G,H,I,J,K,L):");
+	int NodeNum, n;    //å£°æ˜æ€»ç»“ç‚¹æ•°å’ŒæŒ‡å®šç»“ç‚¹æ•° 
+	char input;        //å£°æ˜ç”¨æˆ·é€‰æ‹©å˜é‡ 
+	Copyright();       //æ˜¾ç¤ºç‰ˆæƒ
+	SystemTime();      //æ˜¾ç¤ºç³»ç»Ÿæ—¶é—´
+	Menu();            //æ˜¾ç¤ºèœå•ç•Œé¢ 
+	printf("\nè¯·é€‰æ‹©(A,B,C,D,E,F,G,H,I,J,K,L):");
 	scanf("%c", &input);
 	getchar();
 	while(input != 'L')
 	{
 		if((input < 'A') || (input > 'L'))
-			printf("\n\nÑ¡Ôñ´íÎó£¬ÇëÖØĞÂÑ¡Ôñ......\n\n");
+			printf("\n\né€‰æ‹©é”™è¯¯ï¼Œè¯·é‡æ–°é€‰æ‹©......\n\n");
 		else
 		{
 			switch(input)
 			{
-				//¸Ã²¿·ÖÖ´ĞĞÁ´±íµÄ´´½¨ 
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œé“¾è¡¨çš„åˆ›å»º 
 				case 'A' :	{
-								NodeNum = 2020; 
-						
-								BuildList(NodeNum);     //½¨Á¢Á´±í 
-								printf("\n¹²´´½¨%d¸öÈÕÆÚ½áµã¡£" 
-								       "(1900<=Äê<=2020,1<=ÔÂ<=12,1<=ÈÕ<=31)¡£\n\n", NodeNum);
+								NodeNum = 2020; //åˆ›å»º2020ä¸ªæ—¥æœŸç»“ç‚¹
+								BuildList(NodeNum);     //å»ºç«‹é“¾è¡¨ 
+								printf("\nå…±åˆ›å»º%dä¸ªæ—¥æœŸç»“ç‚¹ã€‚" 
+								       "(1900<=å¹´<=2020,1<=æœˆ<=12,1<=æ—¥<=31)ã€‚\n\n", NodeNum);
 								system("pause");
 								
 							} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞÈÕÆÚÊı¾İµÄÏÔÊ¾				
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œæ—¥æœŸæ•°æ®çš„æ˜¾ç¤º				
 				case 'B' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");	
 								}
 								else
 								{
-									printf("\nÇëÊäÈëÏÔÊ¾Á´±íµÄ½áµãÊın£º");
+									printf("\nè¯·è¾“å…¥æ˜¾ç¤ºé“¾è¡¨çš„ç»“ç‚¹æ•°nï¼š");
 									scanf("%d", &n);
 									getchar();
-									ShowList(n, NodeNum);    //´òÓ¡Á´±íÊı¾İ 
+									ShowList(n, NodeNum);    //æ‰“å°é“¾è¡¨æ•°æ® 
 									system("pause");
 								}
 									
 						  	} 	break;	
-				//¸Ã²¿·ÖÖ´ĞĞ½«Á´±í´æÈëÖ¸¶¨ÎÄ¼ş	  	
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œå°†é“¾è¡¨å­˜å…¥æŒ‡å®šæ–‡ä»¶	  	
 				case 'C' :	{
-								int file;    //ÅĞ¶ÏÎÄ¼şÃûµÄ¶¨Òå·½Ê½ 
+								int file;    //åˆ¤æ–­æ–‡ä»¶åçš„å®šä¹‰æ–¹å¼ 
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
-									printf("\nÇëÑ¡Ôñ´æÈëµÄÎÄ¼şÃû(1.Date.txt 2.×Ô¶¨Òå)\n");
-									printf("\nÇëÊäÈë¶ÔÓ¦µÄĞòºÅ£º");
+									printf("\nè¯·é€‰æ‹©å­˜å…¥çš„æ–‡ä»¶å(1.Date.txt 2.è‡ªå®šä¹‰)\n");
+									printf("\nè¯·è¾“å…¥å¯¹åº”çš„åºå·ï¼š");
 									scanf("%d", &file);
 									getchar(); 
 									if((file != 1) && (file != 2))
 									{
-										printf("\nÊäÈë´íÎó£¡\n\n"); 
+										printf("\nè¾“å…¥é”™è¯¯ï¼\n\n"); 
 										system("pause");
 									}
 									else if(file == 1)
 									{
-										FILE * File = fopen("Date.txt", "w");   //´ò¿ªÎÄ¼ş
-										if (File == NULL)   //Èô´ò¿ªÎÄ¼şÊ§°ÜÔòÍË³ö
+										FILE * File = fopen("Date.txt", "w");   //æ‰“å¼€æ–‡ä»¶
+										if (File == NULL)   //è‹¥æ‰“å¼€æ–‡ä»¶å¤±è´¥åˆ™é€€å‡º
 										{
-											printf("\nÎÄ¼ş´ò¿ªÊ§°Ü¡£\n\n");
+											printf("\næ–‡ä»¶æ‰“å¼€å¤±è´¥ã€‚\n\n");
 											system("pause");
 										}
 										else
 										{
-											listToFile(File, Head);     //Êı¾İ´æÈëÎÄ¼ş 
-											printf("\nÒÑ½«%d¸ö½áµãĞ´ÈëÎÄ¼ş\"Date.txt\"ÖĞ¡£\n\n", NodeNum);
+											listToFile(File, Head);     //æ•°æ®å­˜å…¥æ–‡ä»¶ 
+											printf("\nå·²å°†%dä¸ªç»“ç‚¹å†™å…¥æ–‡ä»¶\"Date.txt\"ä¸­ã€‚\n\n", NodeNum);
 											fclose(File); 
 											system("pause");
 										}
 									}
 									else
 									{
-										char FileName[50];    //ÉùÃ÷×Ô¶¨ÒåÎÄ¼şÃû
-										printf("\nÇëÊäÈë×Ô¶¨ÒåÎÄ¼şÃû(×¢ÒâÌí¼Óºó×º£¬ÀıÈç .txt ¡¢.dat)£º");
+										char FileName[50];    //å£°æ˜è‡ªå®šä¹‰æ–‡ä»¶å
+										printf("\nè¯·è¾“å…¥è‡ªå®šä¹‰æ–‡ä»¶å(æ³¨æ„æ·»åŠ åç¼€ï¼Œä¾‹å¦‚ .txt ã€.dat)ï¼š");
 										gets(FileName);
-										FILE * File = fopen(FileName, "w");   //´ò¿ªÎÄ¼ş
-										if (File == NULL)     //Èô´ò¿ªÎÄ¼şÊ§°ÜÔòÍË³ö
+										FILE * File = fopen(FileName, "w");   //æ‰“å¼€æ–‡ä»¶
+										if (File == NULL)     //è‹¥æ‰“å¼€æ–‡ä»¶å¤±è´¥åˆ™é€€å‡º
 										{
-											printf("\nÎÄ¼ş´ò¿ªÊ§°Ü¡£\n\n");
+											printf("\næ–‡ä»¶æ‰“å¼€å¤±è´¥ã€‚\n\n");
 											system("pause");
 										}
 										else
 										{
 											listToFile(File, Head);
-											printf("\nÒÑ½«%d¸ö½áµãĞ´ÈëÎÄ¼ş\"%s\"ÖĞ¡£\n\n", NodeNum, FileName);
+											printf("\nå·²å°†%dä¸ªç»“ç‚¹å†™å…¥æ–‡ä»¶\"%s\"ä¸­ã€‚\n\n", NodeNum, FileName);
 											fclose(File);
 											system("pause");
 										}
@@ -106,11 +105,11 @@ int main()
 								}
 								
 						  	}	break;	
-				//¸Ã²¿·ÖÖ´ĞĞ·ÖÆÁÏÔÊ¾È«²¿ÄÚÈİ			  	
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œåˆ†å±æ˜¾ç¤ºå…¨éƒ¨å†…å®¹			  	
 				case 'D' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
@@ -120,11 +119,11 @@ int main()
 								}
 
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞÏÔÊ¾²»ºÏ·¨ÈÕÆÚ½áµã		  	
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œæ˜¾ç¤ºä¸åˆæ³•æ—¥æœŸç»“ç‚¹		  	
 				case 'E' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
@@ -134,30 +133,30 @@ int main()
 								}
 
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞÉ¾³ıÖ¸¶¨½áµã		  	
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œåˆ é™¤æŒ‡å®šç»“ç‚¹		  	
 				case 'F' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
 									int Num;
-									printf("\nÇëÑ¡ÔñÉ¾³ı½áµãµÄÎ»ÖÃ(1.µÚÒ»¸ö 2.×îºóÒ»¸ö 3.²»ÄÜ¹¹³ÉºÏ·¨ÈÕÆÚ)£º\n\n");
-									printf("ÇëÊäÈë¶ÔÓ¦µÄĞòºÅ£º");
+									printf("\nè¯·é€‰æ‹©åˆ é™¤ç»“ç‚¹çš„ä½ç½®(1.ç¬¬ä¸€ä¸ª 2.æœ€åä¸€ä¸ª 3.ä¸èƒ½æ„æˆåˆæ³•æ—¥æœŸ)ï¼š\n\n");
+									printf("è¯·è¾“å…¥å¯¹åº”çš„åºå·ï¼š");
 									scanf("%d",&Num);
 									getchar();
-									if(Num == 1)     //É¾³ıµÚÒ»¸ö½áµã 
+									if(Num == 1)     //åˆ é™¤ç¬¬ä¸€ä¸ªç»“ç‚¹ 
 									{
 										DeleteFirstNode(NodeNum);
-										printf("\nÒÑÉ¾³ıµÚÒ»¸ö½áµã¡£\n\n");
+										printf("\nå·²åˆ é™¤ç¬¬ä¸€ä¸ªç»“ç‚¹ã€‚\n\n");
 										system("pause");
 									}
-									else if(Num == 2)     //É¾³ı×îºóÒ»¸ö½áµã 
+									else if(Num == 2)     //åˆ é™¤æœ€åä¸€ä¸ªç»“ç‚¹ 
 									{
 										DeleteLastNode(NodeNum);
-										printf("\nÒÑÉ¾³ı×îºóÒ»¸ö½áµã¡£\n\n");
+										printf("\nå·²åˆ é™¤æœ€åä¸€ä¸ªç»“ç‚¹ã€‚\n\n");
 										system("pause");
 									}
 									else if(Num == 3)
@@ -167,112 +166,112 @@ int main()
 									}
 									else
 									{
-										printf("\nÊäÈë´íÎó...\n\n");
+										printf("\nè¾“å…¥é”™è¯¯...\n\n");
 										system("pause");
 									} 
 								}
 								
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞ²åÈëÖ¸¶¨½áµã 
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œæ’å…¥æŒ‡å®šç»“ç‚¹ 
 				case 'G' :	{	
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
-									int cnt, Judge = 0;    //ÉùÃ÷ÅĞ¶Ï±äÁ¿JudgeÓÃÓÚÅĞ¶ÏÊÇ·ñ²åÈë³É¹¦ , cntÓÃÓÚ¹¦ÄÜÑ¡Ôñ;
-									printf("\nÇëÑ¡Ôñ²åÈë½áµãµÄÎ»ÖÃ");
-									printf("(1.Á´Í· 2.Á´Î² 3.µÚÒ»¸ö´óÓÚµ±Ç°ÈÕÆÚÇ° 4.µÚÒ»¸öĞ¡ÓÚµ±Ç°ÈÕÆÚºó)£º\n\n");
-									printf("ÇëÊäÈë¶ÔÓ¦µÄĞòºÅ£º");
+									int cnt, Judge = 0;    //å£°æ˜åˆ¤æ–­å˜é‡Judgeç”¨äºåˆ¤æ–­æ˜¯å¦æ’å…¥æˆåŠŸ , cntç”¨äºåŠŸèƒ½é€‰æ‹©;
+									printf("\nè¯·é€‰æ‹©æ’å…¥ç»“ç‚¹çš„ä½ç½®");
+									printf("(1.é“¾å¤´ 2.é“¾å°¾ 3.ç¬¬ä¸€ä¸ªå¤§äºå½“å‰æ—¥æœŸå‰ 4.ç¬¬ä¸€ä¸ªå°äºå½“å‰æ—¥æœŸå)ï¼š\n\n");
+									printf("è¯·è¾“å…¥å¯¹åº”çš„åºå·ï¼š");
 									scanf("%d", &cnt);
 									getchar(); 
-									if(cnt == 1)     //²åÈëµ½Á´Í· 
+									if(cnt == 1)     //æ’å…¥åˆ°é“¾å¤´ 
 									{
 										InsertFirstNode(NodeNum); 
-										printf("\nÒÑ½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½Á´Í·¡£\n\n");
+										printf("\nå·²å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°é“¾å¤´ã€‚\n\n");
 										system("pause");
 									}
-									else if(cnt == 2)  //²åÈëµ½Á´Î² 
+									else if(cnt == 2)  //æ’å…¥åˆ°é“¾å°¾ 
 									{
 										InsertLastNode(NodeNum); 
-										printf("\nÒÑ½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½Á´Î²¡£\n\n");
+										printf("\nå·²å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°é“¾å°¾ã€‚\n\n");
 										system("pause");
 									}
 									else if(cnt == 3)
 									{
-										InsertNodeToBig(Judge, NodeNum);   //½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½µÚÒ»¸ö´óÓÚ¸Ã½áµãÈÕÆÚµÄÇ°Ãæ
+										InsertNodeToBig(Judge, NodeNum);   //å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°ç¬¬ä¸€ä¸ªå¤§äºè¯¥ç»“ç‚¹æ—¥æœŸçš„å‰é¢
 										if(Judge == 1)
 										{
-											printf("\nÒÑ½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½µÚÒ»¸ö´óÓÚ¸Ã½áµãÈÕÆÚµÄÇ°Ãæ¡£\n\n"); 
+											printf("\nå·²å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°ç¬¬ä¸€ä¸ªå¤§äºè¯¥ç»“ç‚¹æ—¥æœŸçš„å‰é¢ã€‚\n\n"); 
 										}
 										else
 										{
-											printf("\n²åÈëÊ§°Ü£¬Ã»ÓĞÕÒµ½´óÓÚµ±Ç°ÈÕÆÚµÄ½áµã¡£\n\n");
+											printf("\næ’å…¥å¤±è´¥ï¼Œæ²¡æœ‰æ‰¾åˆ°å¤§äºå½“å‰æ—¥æœŸçš„ç»“ç‚¹ã€‚\n\n");
 										}
 										system("pause");
 									}
 									else if(cnt == 4)
 									{
-										InsertNodeToSmall(Judge, NodeNum);  //½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½µÚÒ»¸öĞ¡ÓÚ¸Ã½áµãÈÕÆÚµÄÇ°Ãæ
+										InsertNodeToSmall(Judge, NodeNum);  //å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°ç¬¬ä¸€ä¸ªå°äºè¯¥ç»“ç‚¹æ—¥æœŸçš„å‰é¢
 										if(Judge == 1)
 										{
-											printf("\nÒÑ½«µ±Ç°ÈÕÆÚ½áµã²åÈëµ½µÚÒ»¸öĞ¡ÓÚ¸Ã½áµãÈÕÆÚµÄºóÃæ¡£\n\n"); 
+											printf("\nå·²å°†å½“å‰æ—¥æœŸç»“ç‚¹æ’å…¥åˆ°ç¬¬ä¸€ä¸ªå°äºè¯¥ç»“ç‚¹æ—¥æœŸçš„åé¢ã€‚\n\n"); 
 										}
 										else
 										{
-											printf("\n²åÈëÊ§°Ü£¬Ã»ÓĞÕÒµ½Ğ¡ÓÚµ±Ç°ÈÕÆÚµÄ½áµã¡£\n\n");
+											printf("\næ’å…¥å¤±è´¥ï¼Œæ²¡æœ‰æ‰¾åˆ°å°äºå½“å‰æ—¥æœŸçš„ç»“ç‚¹ã€‚\n\n");
 										}
 										system("pause");
 									}
 									else
 									{
-										printf("\nÊäÈë´íÎó...\n\n");
+										printf("\nè¾“å…¥é”™è¯¯...\n\n");
 										system("pause");
 									}
 								}
 								
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞÏÔÊ¾½áµãÈÕÆÚ¶ÔÓ¦µÄÌìÊı		  	
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œæ˜¾ç¤ºç»“ç‚¹æ—¥æœŸå¯¹åº”çš„å¤©æ•°		  	
 				case 'H' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
 									
-									printf("\nÇëÊäÈëÏÔÊ¾Á´±íµÄ½áµãÊın£º");
+									printf("\nè¯·è¾“å…¥æ˜¾ç¤ºé“¾è¡¨çš„ç»“ç‚¹æ•°nï¼š");
 									scanf("%d", &n);
 									getchar();
-									ShowNodeDateDiffer(n, NodeNum);    //´òÓ¡Á´±íÊı¾İ 
+									ShowNodeDateDiffer(n, NodeNum);    //æ‰“å°é“¾è¡¨æ•°æ® 
 									system("pause");
 								}
 								
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞÁ´±íÅÅĞò 
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œé“¾è¡¨æ’åº 
 				case 'I' :	{	
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
-									printf("\nÕıÔÚÅÅĞò£¬ÇëÉÔºò......\n");
+									printf("\næ­£åœ¨æ’åºï¼Œè¯·ç¨å€™......\n");
 									ListSort();
-									printf("\nÅÅĞò½áÊø¡£\n\n");
+									printf("\næ’åºç»“æŸã€‚\n\n");
 									system("pause");
 								}
 								
 						  	} 	break;
-				//¸Ã²¿·ÖÖ´ĞĞ²éÕÒËØÊı½áµã 
+				//è¯¥éƒ¨åˆ†æ‰§è¡ŒæŸ¥æ‰¾ç´ æ•°ç»“ç‚¹ 
 				case 'J' :	{	
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
@@ -282,17 +281,17 @@ int main()
 								}
 								
 						  	}	break;
-				//¸Ã²¿·ÖÖ´ĞĞÁ´±í·­×ª 
+				//è¯¥éƒ¨åˆ†æ‰§è¡Œé“¾è¡¨ç¿»è½¬ 
 				case 'K' :	{
 								if(Head == NULL)
 								{
-									printf("\nÁ´±íÎª¿Õ£¡\n\n");
+									printf("\né“¾è¡¨ä¸ºç©ºï¼\n\n");
 									system("pause");
 								}
 								else
 								{
 									ReverseList();
-									printf("\nÁ´±íÒÑ³É¹¦·­×ª¡£\n\n");
+									printf("\né“¾è¡¨å·²æˆåŠŸç¿»è½¬ã€‚\n\n");
 									system("pause");
 								} 
 								
@@ -304,7 +303,7 @@ int main()
 		Copyright();     
 		SystemTime();    
 		Menu();
-		printf("\nÇëÑ¡Ôñ(A,B,C,D,E,F,G,H,I,J,K,L):");   
+		printf("\nè¯·é€‰æ‹©(A,B,C,D,E,F,G,H,I,J,K,L):");   
 		scanf("%c", &input);
 		getchar();
 	}
